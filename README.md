@@ -11,7 +11,7 @@ A playful web experiment where you try (and fail 😉) to reach a Googol (10^100
 
 ## 🚀 Demo
   
-`https://Rafaday.github.io/journey-to-googol/`
+[`https://Rafaday.github.io/journey-to-googol/`](https://rafaday.github.io/JOURNEY-TO-GOOGOL/)
 
 ## 📦 Installation
 Clone the repository and open `index.html` in your browser:
