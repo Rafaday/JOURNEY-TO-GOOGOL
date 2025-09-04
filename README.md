@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Journey to Googol
 
 A playful web experiment where you try (and fail 😉) to reach a Googol (10^100) by clicking buttons or letting an auto-clicker bot help you.
@@ -10,8 +10,8 @@ A playful web experiment where you try (and fail 😉) to reach a Googol (10^100
 - Responsive design with a clean UI.
 
 ## 🚀 Demo
-(If you plan to host it on GitHub Pages, add the link here, e.g.  
-`https://Rafaday.github.io/journey-to-googol/`)
+  
+`https://Rafaday.github.io/journey-to-googol/`
 
 ## 📦 Installation
 Clone the repository and open `index.html` in your browser:
