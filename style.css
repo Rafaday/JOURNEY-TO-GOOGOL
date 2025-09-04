@@ -1,0 +1,323 @@
+/* MIT License
+Copyright (c) 2025 Rafaday
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+User: https://github.com/Rafaday
+*/
+
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+/* Counter Styles */
+.counter-card {
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    padding: 20px 30px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.label-current-count {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.counter-display {
+    font-family: 'Space Mono', monospace;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #2980b9;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    user-select: none;
+    line-height: 1.2;
+    max-width: 100%;
+}
+
+/* Add Button Styles */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.add-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 150px;
+    flex-grow: 1;
+    max-width: 250px;
+}
+
+    .add-button:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+    }
+
+    .add-button:active {
+        background-color: #2c3e50;
+        transform: translateY(0);
+    }
+
+    /* Colors for specific buttons */
+    .add-button[data-value="10"] {
+        background-color: #2ecc71;
+    }
+
+    .add-button[data-value="100"] {
+        background-color: #f39c12;
+    }
+
+    .add-button[data-value="1000000"] {
+        background-color: #e74c3c;
+    }
+
+    .add-button[data-value="1000000000000"] {
+        background-color: #9b59b6;
+    }
+
+    .add-button[data-value="1000000000000000000"] {
+        background-color: #1abc9c;
+    }
+
+    .add-button[data-value="100000000000000000000000000000000000000000000000000"] {
+        background-color: #8e44ad;
+    }
+
+
+/* Automation Button Styles */
+.automation-section {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.automate-button {
+    background-color: #e67e22; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .automate-button:hover {
+        background-color: #d35400;
+        transform: translateY(-2px);
+    }
+
+    .automate-button:active {
+        background-color: #c0392b;
+        transform: translateY(0);
+    }
+
+.automation-info {
+    font-size: 0.8em;
+    color: #95a5a6;
+    margin-top: 10px;
+}
+
+.info-text {
+    font-size: 0.9em;
+    color: #95a5a6;
+}
+
+/* Lightbox/Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+    .modal-overlay.show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #7f8c8d;
+    transition: color 0.2s ease;
+}
+
+    .modal-close-button:hover {
+        color: #333;
+    }
+
+.modal-content h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.bot-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.bot-button {
+    background-color: #3498db; 
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+    flex-grow: 1;
+    max-width: 200px;
+}
+
+    .bot-button.active {
+        background-color: #e74c3c; 
+    }
+
+    .bot-button:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+    }
+
+    .bot-button.active:hover {
+        background-color: #c0392b;
+    }
+
+
+/* Media Queries for smaller screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .counter-display {
+        font-size: 1.8em;
+        padding: 15px;
+    }
+
+    .add-button, .automate-button, .bot-button {
+        font-size: 1em;
+        padding: 12px 20px;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .buttons, .bot-buttons {
+        gap: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+        .modal-content h2 {
+            font-size: 1.5em;
+        }
+}

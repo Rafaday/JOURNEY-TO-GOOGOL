@@ -1,0 +1,90 @@
+<!-- MIT License
+Copyright (c) 2025 Rafaday
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+User: https://github.com/Rafaday
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOURNEY TO GOOGOL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JOURNEY TO GOOGOL</h1>
+        <p class="subtitle">Can you reach 10<sup>100</sup>? (Spoilers: No)</p>
+
+        <!-- Display Container -->
+        <div class="counter-card" id="counter-card-to-capture">
+            <span class="label-current-count">Current Count:</span>
+            <div class="counter-display">
+                <span id="current-count">0</span>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="add-button" data-value="1">Add x1</button>
+            <button class="add-button" data-value="10">Add x10</button>
+            <button class="add-button" data-value="100">Add x100</button>
+            <button class="add-button" data-value="1000000">Add x1,000,000</button>
+            <button class="add-button" data-value="1000000000000">Add x1,000,000,000,000</button>
+            <button class="add-button" data-value="1000000000000000000">Add x10<sup>18</sup></button>
+            <button class="add-button" data-value="100000000000000000000000000000000000000000000000000">Add x10<sup>50</sup></button>
+        </div>
+
+        <div class="automation-section">
+            <button id="open-bot-modal-button" class="automate-button">
+                Automate Clicks
+            </button>
+            <p class="automation-info">
+                (Let an auto-clicker try to add for you... if it can)
+            </p>
+        </div>
+
+        <p class="info-text">
+            A googol (10<sup>100</sup>) is a number so vast that it has 101 digits.
+            You will get tired long before you get close.
+            **Even with bots using the available buttons, the number is unreachable. 😉**
+        </p>
+    </div>
+
+    <!-- Lightbox/Modal for the Auto-Clicker Bot -->
+    <div id="bot-modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-button" id="close-bot-modal">&times;</button>
+            <h2>Auto-Clicker Bot to the Rescue</h2>
+            <p>Choose the amount you want the "bot" to automatically click:</p>
+            <div class="bot-buttons" id="bot-control-buttons">
+                <!-- Bot buttons will be generated here with JavaScript -->
+            </div>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #7f8c8d;">
+                The auto-clicker will click the chosen button at 50 clicks per second.
+                Press the same button again to stop it.
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
